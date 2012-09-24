@@ -1,6 +1,23 @@
-= simple_form_for @company do |company_form|
+%h1
+  Simple form with the
+  %code simple_fields_for
+
+= simple_form_for Company.new do |company_form|
   = company_form.input :name
   = company_form.simple_fields_for :primary_user do |user_form|
     = user_form.input :email
 
   = company_form.button :submit
+
+%hr
+
+%h1
+  Simple form directly on the nested model
+  (no
+  %code simple_fields_for
+  )
+
+= simple_form_for User.new, url: 'x' do |user_form|
+  = user_form.input :email
+  = user_form.button :submit
+
