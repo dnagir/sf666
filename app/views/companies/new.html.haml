@@ -1,0 +1,6 @@
+= simple_form_for @company do |company_form|
+  = company_form.input :name
+  = company_form.simple_fields_for :primary_user do |user_form|
+    = user_form.input :email
+
+  = company_form.button :submit

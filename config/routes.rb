@@ -1,4 +1,7 @@
 Sf666::Application.routes.draw do
+  root :to => 'companies#new'
+  resources :companies
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
